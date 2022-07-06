@@ -26,7 +26,7 @@ fn main() {
     let mut result_b = 0;
 
     for index in 0..numbers.len() {
-        let ref slice = &numbers[index..cmp::min(index + 3, numbers.len())];
+        let slice = &(&numbers[index..cmp::min(index + 3, numbers.len())]);
         let sum: u16 = slice.iter().sum();
 
         if prev_sum < sum {
