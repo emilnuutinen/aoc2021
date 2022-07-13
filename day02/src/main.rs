@@ -16,6 +16,7 @@ fn main() {
     let data = fs::read_to_string("input.txt").expect("File not found");
     let mut hor: i32 = 0;
     let mut ver: i32 = 0;
+    let mut aim: i32 = 0;
     let mut line: i32 = 0;
 
     let commands: Vec<Command> = data
@@ -37,9 +38,12 @@ fn main() {
     for command in commands {
         line += 1;
         match command.direction {
-            Direction::Forward => hor += command.value,
-            Direction::Down => ver += command.value,
-            Direction::Up => ver -= command.value,
+            Direction::Forward => {
+                hor += command.value;
+                ver += aim * command.value;
+            }
+            Direction::Down => aim += command.value,
+            Direction::Up => aim -= command.value,
             Direction::None => println!("Invalid command on line {}", line),
         }
     }
