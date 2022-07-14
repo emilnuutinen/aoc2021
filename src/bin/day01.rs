@@ -2,7 +2,7 @@ use std::cmp;
 use std::fs;
 
 fn main() {
-    let data = fs::read_to_string("input.txt").expect("File not found");
+    let data = fs::read_to_string("data/day01.txt").expect("File not found");
     let mut prev_val = 1000;
     let mut result_a = 0;
 

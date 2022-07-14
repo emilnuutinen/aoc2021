@@ -13,7 +13,7 @@ struct Command {
 }
 
 fn main() {
-    let data = fs::read_to_string("input.txt").expect("File not found");
+    let data = fs::read_to_string("data/day02.txt").expect("File not found");
     let mut hor: i32 = 0;
     let mut ver: i32 = 0;
     let mut aim: i32 = 0;
